@@ -77,16 +77,14 @@ int main()
 		{
 			Fold[i] = F[i];
 		}
-		for (int i = 0; i <= nr; i++)
+		
+		for(int i=0;i<nr;i++)
 		{
-			if (i != 0 && i != nr)
-				F[i] = Fold[i] + dz*(pow(R[i] * dr*dr*Pe, -1)*(mid(R[i], R[i + 1])*(Fold[i + 1] - Fold[i]) - mid(R[i], R[i - 1])*(Fold[i] - Fold[i - 1])) - Da*Fold[i]);
-			//boundary condition
-			else if (i == nr)
-				F[i] = F[i - 1];
-			else
-				F[i] = F[i + 1];
+			F[i] = Fold[i] + dz*(pow(R[i] * dr*dr*Pe, -1)*(mid(R[i], R[i + 1])*(Fold[i + 1] - Fold[i]) - mid(R[i], R[i - 1])*(Fold[i] - Fold[i - 1])) - Da*Fold[i]);	
 		}
+			
+		F[0]=F[1];
+		F[nr]=F[nr-1];
 		for (int i = 0; i <= nr; i++)
 		{
 			out << F[i] << endl;
