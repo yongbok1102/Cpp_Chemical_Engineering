@@ -78,7 +78,7 @@ int main()
 			Fold[i] = F[i];
 		}
 		
-		for(int i=0;i<nr;i++)
+		for(int i=1;i<nr;i++)
 		{
 			F[i] = Fold[i] + dz*(pow(R[i] * dr*dr*Pe, -1)*(mid(R[i], R[i + 1])*(Fold[i + 1] - Fold[i]) - mid(R[i], R[i - 1])*(Fold[i] - Fold[i - 1])) - Da*Fold[i]);	
 		}
@@ -89,8 +89,10 @@ int main()
 		{
 			out << F[i] << endl;
 		}
-		cout << "calculation " << j << endl;
+		cout << "z= " << j*dz << endl;
 	}
 	out.close();
+	delete[] R; delete[] Z;
+	delete[] F; delete[] Fold;
 	return 0;
 }
