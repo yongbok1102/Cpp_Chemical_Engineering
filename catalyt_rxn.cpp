@@ -3,8 +3,8 @@
 #include <fstream>
 
 /*-------------------------------------------------*/
-/*Source code for catalytic reaction				*/
-/*Written by yongbok1102							*/
+/*Source code for catalytic reaction	           */
+/*Written by yongbok1102			   */
 /*-------------------------------------------------*/
 
 using namespace std;
